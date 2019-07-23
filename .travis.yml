@@ -39,3 +39,4 @@ notifications:
     recipients:
       - chungkang.c@gmail.com
   slack: meozura:0K4IX9c0a4twNIBo27B0OmpN
+  
