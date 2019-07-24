@@ -17,4 +17,10 @@ public class WebController {
         model.addAttribute("posts", postsService.findAllDesc());
         return "main";
     }
+
+    @GetMapping("/osm")
+    public String osm(Model model) {
+        model.addAttribute("posts", postsService.findAllDesc());
+        return "osm";
+    }
 }
