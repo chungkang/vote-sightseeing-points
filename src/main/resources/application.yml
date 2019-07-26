@@ -22,15 +22,14 @@ spring:
 
 # 운영 환경
 ---
-spring.profiles: set1
-spring.profiles.include: real-db
-
+spring:
+  profiles: set1
 server:
   port: 8081
 
 ---
-spring.profiles: set2
-spring.profiles.include: real-db
+spring:
+  profiles: set2
 
 server:
   port: 8082
