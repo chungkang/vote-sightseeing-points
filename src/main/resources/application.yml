@@ -27,3 +27,10 @@ spring.profiles.include: real-db
 
 server:
   port: 8081
+
+---
+spring.profiles: set2
+spring.profiles.include: real-db
+
+server:
+  port: 8082
