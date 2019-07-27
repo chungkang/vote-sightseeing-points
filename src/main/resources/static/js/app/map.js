@@ -9,7 +9,7 @@
 
 var map = L.map('mapid').setView([37.5,127],11);
 
-var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+var map = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
     attribution:'&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> Contributors'
 }).addTo(map);
 
