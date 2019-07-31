@@ -20,7 +20,22 @@ public class WebController {
 
     @GetMapping("/map")
     public String map(Model model) {
-        model.addAttribute("posts", postsService.findAllDesc());
         return "map";
+    }
+
+    @GetMapping("/lists")
+    public String lists(Model model) {
+        model.addAttribute("posts", postsService.findAllDesc());
+        return "lists";
+    }
+
+    @GetMapping("/details")
+    public String details(Model model) {
+        return "details";
+    }
+
+    @GetMapping("/add")
+    public String add(Model model) {
+        return "add";
     }
 }

@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>Vote Sightseeing Points</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <!--부트스트랩 css 추가-->
     <link rel="stylesheet" href="/css/lib/bootstrap.min.css">
@@ -19,22 +19,79 @@
             crossorigin=""></script>
 
     <style>
-        #mapid { height: 500px; margin: 0px; }
+        #mapid {
+            height: 500px;
+            margin: 0px;
+        }
     </style>
 </head>
 <body>
-    <h1>Vote Sightseeing Points 0.0.12</h1>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div id="nav" class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">VSPs</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapsible">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="/map">
+                        <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+                        <span class="hidden-xs"> Map</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/lists">
+                        <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+                        <span class="hidden-xs"> Lists</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/add">
+                        <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                        <span class="hidden-xs"> Add</span>
+                    </a>
+                </li>
+            </ul>
 
-    <div id = "mapid"/>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Log In </a></li>
+                <li><a href="">Register </a></li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
 
-    <!--부트스트랩 js, jquery 추가-->
-    <script src="/js/lib/jquery.min.js"></script>
-    <script src="/js/lib/bootstrap.min.js"></script>
 
-    <!--custom js 추가-->
-    <script src="/js/app/osm.js"></script>
-
-    <!-- footer -->
-    <footer id = "footer"/>
+<div id="top" class="container" role="main" style="padding-top: 65px;">
+    <div class="row">
+        <div class="col-md-12" id="content-l-container">
+            <div id="mapid" style="min-height: 400px; height: 580px; position: relative;"></div>
+            <hr>
+            <footer class="footer">
+                <div class="text-center text-muted">
+                    <a href="https://github.com/chungkang/vote-sightseeing-points">Github</a> ·
+                    <a href="#" rel="nofollow">Contact</a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>
 </body>
+
+<!--부트스트랩 js, jquery 추가-->
+<script src="/js/lib/jquery.min.js"></script>
+<script src="/js/lib/bootstrap.min.js"></script>
+
+<!--custom js 추가-->
+<script src="/js/app/common/common.js"></script>
+<script src="/js/app/map.js"></script>
+
 </html>

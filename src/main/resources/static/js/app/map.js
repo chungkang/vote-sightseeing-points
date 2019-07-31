@@ -9,6 +9,8 @@
 
 var map = L.map('mapid').setView([37.5,127],11);
 
+//var map = L.map('mapid', { minZoom: 2, zoomControl: false, attributionControl: true, layers: [mapTiles] }).setView([37.5111, 126.9743], 11);
+
 var map = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
     attribution:'&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> Contributors'
 }).addTo(map);
