@@ -32,3 +32,9 @@ for (let i=0; i<pointsLength; i++) {
         );
     })();
 }
+
+// 현재위치 구하기
+navigator.geolocation.getCurrentPosition(function(location) {
+    lat = location.coords.latitude;
+    lng = location.coords.longitude;
+});
