@@ -1,44 +1,34 @@
+// 내비게이션바 버튼 활성화
+$("#navMap").attr('class', 'active');
+$("#navLists").attr('class', '');
+$("#navAdd").attr('class', '');
 
-// var mymap = L.map('mapid').setView([51.505, -0.09], 13);
-// L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-//     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-//     maxZoom: 18,
-//     id: 'mapbox.streets',
-//     accessToken: 'your.mapbox.access.token'
-// }).addTo(mymap);
+let lat = 36.1358642; //위도
+let lng = 128.0785804; //경도
+let zoom = 7; //줌 레벨
 
-var map = L.map('mapid').setView([37.5,127],11);
+// 지도 컨테이너 생성
+const mymap = L.map('mapid', {
+    center: [lat, lng],
+    zoom: zoom
+});
 
-//var map = L.map('mapid', { minZoom: 2, zoomControl: false, attributionControl: true, layers: [mapTiles] }).setView([37.5111, 126.9743], 11);
+// 지도 표시
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' //화면 오른쪽 하단 attributors
+}).addTo(mymap);
 
-var map = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
-    attribution:'&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> Contributors'
-}).addTo(map);
-
-var marker = L.marker([37.5, 127],{
-    draggable: true
-}).addTo(map);
-
-marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-
-function dragEnd(e) {
-    alert("Drag ended the map" + marker.getLatLng().toString());
+// 관광 포인트 지도에 출력
+const points = JSON.parse($('#pointsJSON').val());
+const pointsLength = points.length;
+for (let i=0; i<pointsLength; i++) {
+    let latitude = points[i].location.split(" ")[0];
+    let longitude = points[i].location.split(" ")[1];
+    (function () {
+        eval(
+            `const marker${i} = L.marker([${latitude}, ${longitude}]).addTo(mymap);
+            marker${i}.bindPopup("<a href='/detail/${points[i].point_no}'>${points[i].name}</a>");
+            `
+        );
+    })();
 }
-
-marker.on('dragend', dragEnd);
-
-// var popup = L.popup()
-//     .setLatLng([37.4, 127.5])
-//     .setContent("I am a standalone popup.")
-//     .openOn(map);
-
-var popup = L.popup();
-
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(map);
-}
-
-map.on('click', onMapClick);

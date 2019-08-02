@@ -8,7 +8,6 @@ import java.util.stream.Stream;
 public interface PointsRepository extends JpaRepository<Points, Long>{
 
     @Query("SELECT p " +
-            "FROM Points p " +
-            "ORDER BY p.id DESC")
-    Stream<Points> findAllDesc();
+            "FROM Points p ")
+    Stream<Points> findAllPoints();
 }
