@@ -11,4 +11,5 @@ public interface UsersRepository extends JpaRepository<Users, Long>{
             "FROM Users p " +
             "ORDER BY p.id DESC")
     Stream<Users> findAllDesc();
+
 }
