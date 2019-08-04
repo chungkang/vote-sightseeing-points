@@ -1,6 +1,6 @@
-package com.chungkang.webservice.dto.users;
+package com.chungkang.webservice.dto.members;
 
-import com.chungkang.webservice.domain.users.Users;
+import com.chungkang.webservice.domain.members.Members;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,21 +9,21 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class UsersSaveRequestDto {
+public class MembersSaveRequestDto {
 
     private String name;
     private String email;
     private String password;
 
     @Builder
-    public UsersSaveRequestDto(String name, String email, String password) {
+    public MembersSaveRequestDto(String name, String email, String password) {
         this.name = name;
         this.email = email;
         this.password = password;
     }
 
-    public Users toEntity(){
-        return Users.builder()
+    public Members toEntity(){
+        return Members.builder()
                 .name(name)
                 .email(email)
                 .password(password)

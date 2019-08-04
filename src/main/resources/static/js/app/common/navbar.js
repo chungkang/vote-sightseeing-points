@@ -1,9 +1,16 @@
+let emailCheck = 0;     // 중복체크 안된 경우
+
 const signup = {
     init : function () {
         const _this = this;
         $('#btn-signup').on('click', function () {
             if(signUpCheck()) {
-                _this.save();
+                if(emailCheck == 0) {
+                    alert("이메일 중복체크를 해주세요");
+                    $('#signup_email').focus();
+                } else {
+                    _this.save();
+                }
             }
         });
     },
@@ -16,7 +23,7 @@ const signup = {
 
         $.ajax({
             type: 'POST',
-            url: '/users/signup',
+            url: '/members/signup',
             dataType: 'json',
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data)
@@ -32,7 +39,7 @@ const signup = {
 
 signup.init();
 
-// sign up check
+// sign up validation check
 function signUpCheck() {
     const email = $("#signup_email").val();
     const name = $("#signup_name").val();
@@ -57,3 +64,37 @@ function signUpCheck() {
     }
     return true;
 }
+
+// email 중복여부 확인
+$(function() {
+    $("#btn-emailcheck").click(function () {
+        if($("#signup_email").val().length == 0){
+            alert("이메일을 입력해 주세요");
+            $("#signup_email").focus();
+            return false;
+        }
+
+        const email = $("#signup_email").val();
+        $.ajax({
+            async: true,
+            type: 'POST',
+            data: email,
+            url: "/members/emailcheck",
+            dataType: "json",
+            contentType: "application/json; charset=UTF-8",
+            success: function (data) {
+                if (data.count > 0) {
+                    alert("해당 이메일이 존재합니다. 다른 이메일을 입력해주세요.");
+                    $("#signup_email").focus();
+                    emailCheck = 0;
+                } else {
+                    alert("사용 가능한 이메일입니다.");
+                    emailCheck = 1;
+                }
+            },
+            error: function (error) {
+                alert("error : " + error);
+            }
+        });
+    });
+});

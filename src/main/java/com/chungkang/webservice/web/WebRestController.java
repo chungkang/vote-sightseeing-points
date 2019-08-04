@@ -1,24 +1,23 @@
 package com.chungkang.webservice.web;
 
 import com.chungkang.webservice.dto.posts.PostsSaveRequestDto;
-import com.chungkang.webservice.dto.users.UsersSaveRequestDto;
+import com.chungkang.webservice.dto.members.MembersSaveRequestDto;
 import com.chungkang.webservice.service.PostsService;
-import com.chungkang.webservice.service.UsersService;
+import com.chungkang.webservice.service.MembersService;
 import lombok.AllArgsConstructor;
 import org.springframework.core.env.Environment;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @AllArgsConstructor
 public class WebRestController {
 
     private PostsService postsService;
-    private UsersService usersService;
+    private MembersService membersService;
     private Environment env;
 
     @GetMapping("/hello")
@@ -39,13 +38,23 @@ public class WebRestController {
                 .orElse("");
     }
 
-    @GetMapping("/users/signup")
+    @GetMapping("/members/signup")
     public void signupGET() {
 
     }
 
-    @PostMapping("/users/signup")
-    public Long signupPOST(@RequestBody UsersSaveRequestDto dto) {
-        return usersService.save(dto);
+    @PostMapping("/members/signup")
+    public Long signupPOST(@RequestBody MembersSaveRequestDto dto) {
+        return membersService.save(dto);
+    }
+
+    @RequestMapping("/members/emailcheck")
+    @ResponseBody
+    public Map<Object, Object> emailCheck(@RequestBody String email) {
+        int count = 0;
+        Map<Object, Object> map = new HashMap<Object, Object>();
+        count = membersService.emailCheck(email);
+        map.put("count", count);
+        return map;
     }
 }

@@ -24,12 +24,12 @@ public class Votes extends BaseTimeEntity {
     private Long point_no;
 
     @Column
-    private Long user_no;
+    private Long member_no;
 
     @Builder
-    public Votes(Long vote_no, Long point_no, Long user_no) {
+    public Votes(Long vote_no, Long point_no, Long member_no) {
         this.vote_no = vote_no;
         this.point_no = point_no;
-        this.user_no = user_no;
+        this.member_no = member_no;
     }
 }

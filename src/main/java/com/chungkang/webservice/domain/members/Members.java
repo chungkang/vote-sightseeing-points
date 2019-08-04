@@ -1,4 +1,4 @@
-package com.chungkang.webservice.domain.users;
+package com.chungkang.webservice.domain.members;
 
 import com.chungkang.webservice.domain.BaseTimeEntity;
 import lombok.AccessLevel;
@@ -14,11 +14,11 @@ import javax.persistence.Id;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-public class Users extends BaseTimeEntity {
+public class Members extends BaseTimeEntity {
 
     @Id
     @GeneratedValue
-    private Long user_no;
+    private Long member_no;
 
     @Column(length = 500, nullable = false)
     private String name;
@@ -30,8 +30,8 @@ public class Users extends BaseTimeEntity {
     private String password;
 
     @Builder
-    public Users(Long user_no, String name, String email, String password) {
-        this.user_no = user_no;
+    public Members(Long member_no, String name, String email, String password) {
+        this.member_no = member_no;
         this.name = name;
         this.email = email;
         this.password = password;

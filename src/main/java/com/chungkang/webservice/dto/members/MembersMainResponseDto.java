@@ -1,6 +1,6 @@
-package com.chungkang.webservice.dto.users;
+package com.chungkang.webservice.dto.members;
 
-import com.chungkang.webservice.domain.users.Users;
+import com.chungkang.webservice.domain.members.Members;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
@@ -8,16 +8,16 @@ import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 @Getter
-public class UsersMainResponseDto {
+public class MembersMainResponseDto {
 
-    private Long user_no;       // 회원번호
+    private Long member_no;       // 회원번호
     private String name;        // 이름
     private String email;       // 이메일
     private String password;    // 비밀번호
     private String modifiedDate;
 
-    public UsersMainResponseDto(Users entity) {
-        user_no = entity.getUser_no();
+    public MembersMainResponseDto(Members entity) {
+        member_no = entity.getMember_no();
         name = entity.getName();
         email = entity.getEmail();
         password = entity.getPassword();
