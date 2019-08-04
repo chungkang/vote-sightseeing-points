@@ -14,7 +14,8 @@ public class PointsMainResponseDto {
     private String location;    // 좌표
     private String memo;        // 메모
     private String author;      // 요청자
-    private String modifiedDate;
+    private String modifiedDate;// 최종수정일
+    private String permit;      // 등록여부
 
     public PointsMainResponseDto(Points entity) {
         point_no = entity.getPoint_no();
@@ -23,6 +24,7 @@ public class PointsMainResponseDto {
         memo = entity.getMemo();
         author = entity.getAuthor();
         modifiedDate = toStringDateTime(entity.getModifiedDate());
+        permit = entity.getPermit();
     }
 
     private String toStringDateTime(LocalDateTime localDateTime){

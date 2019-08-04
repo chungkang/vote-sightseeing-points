@@ -31,12 +31,16 @@ public class Points extends BaseTimeEntity {
 
     private String author;      // 요청자
 
+    @Column(length = 2, nullable = false)
+    private String permit;      // 등록여부
+
     @Builder
-    public Points(Long point_no, String name, String location, String memo, String author) {
+    public Points(Long point_no, String name, String location, String memo, String author, String permit) {
         this.point_no = point_no;
         this.name = name;
         this.location = location;
         this.memo = memo;
         this.author = author;
+        this.permit = permit;
     }
 }

@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Vote Sightseeing Points</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--부트스트랩 css 추가-->
+    <link rel="stylesheet" href="/css/lib/bootstrap.min.css">
+</head>
+<body>
+{{> common/navbar }}
+<div id="top" class="container" role="main" style="padding-top: 65px;">
+    <div class="row">
+        <div class="col-md-8" id="content-l-container">
+            <section id="spots-list">
+                <ul class="list-group">
+                    <!-- 목록 출력 영역 -->
+                    <table class="table table-horizontal table-bordered">
+                        <thead class="thead-strong">
+                        <tr>
+                            <th>번호</th>
+                            <th>명칭</th>
+                            <th>좌표</th>
+                            <th>작성자</th>
+                            <th>최종수정일</th>
+                            <th colspan="2">등록여부</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbody">
+                        {{#each points}}
+                            <tr>
+                                <td>{{point_no}}</td>
+                                <td>{{name}}</td>
+                                <td>{{location}}</td>
+                                <td>{{author}}</td>
+                                <td>{{modifiedDate}}</td>
+                                <td>{{permit}}</td>
+                                <td><button class="btn btn-primary">{{point_no}}번 등록</button></td>
+                            </tr>
+                        {{/each}}
+                        </tbody>
+                    </table>
+
+
+                </ul>
+            </section>
+            <hr>
+            <footer class="footer">
+                {{> common/footer }}
+            </footer>
+        </div>
+    </div>
+</div>
+</body>
+
+<!--부트스트랩 js, jquery 추가-->
+<script src="/js/lib/jquery.min.js"></script>
+<script src="/js/lib/bootstrap.min.js"></script>
+
+<!--custom js 추가-->
+<script src="/js/app/common/common.js"></script>
+<script src="/js/app/main.js"></script>
+
+</html>

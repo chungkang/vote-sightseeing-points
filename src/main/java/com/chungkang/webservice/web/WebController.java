@@ -23,7 +23,6 @@ public class WebController {
 
     @GetMapping("/map")
     public String map(Model model) {
-        model.addAttribute("points", pointsService.findAllPoints());
         model.addAttribute("pointsJSON", new Gson().toJson(pointsService.findAllPoints()));
         System.out.println(new Gson().toJson(pointsService.findAllPoints()));
         return "map";
@@ -42,4 +41,10 @@ public class WebController {
 
     @GetMapping("/add")
     public String add(Model model) { return "add"; }
+
+    @GetMapping("/admin")
+    public String admin(Model model) {
+        model.addAttribute("points", pointsService.findAllPoints());
+        return "admin";
+    }
 }

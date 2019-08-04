@@ -14,7 +14,7 @@ public class MembersMainResponseDto {
     private String name;        // 이름
     private String email;       // 이메일
     private String password;    // 비밀번호
-    private String modifiedDate;
+    private String modifiedDate;    // 최종수정일
 
     public MembersMainResponseDto(Members entity) {
         member_no = entity.getMember_no();
