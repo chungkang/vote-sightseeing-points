@@ -2,3 +2,6 @@
 $("#navMap").attr('class', '');
 $("#navLists").attr('class', 'active');
 $("#navAdd").attr('class', '');
+
+// 투표 버튼 임시 비활성화
+$('.vote').hide();
