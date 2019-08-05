@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 @AllArgsConstructor
@@ -23,19 +24,21 @@ public class WebController {
 
     @GetMapping("/map")
     public String map(Model model) {
-        model.addAttribute("pointsJSON", new Gson().toJson(pointsService.findAllPoints()));
-        System.out.println(new Gson().toJson(pointsService.findAllPoints()));
+        model.addAttribute("pointsJSON", new Gson().toJson(pointsService.findByPermit()));
         return "map";
     }
 
     @GetMapping("/lists")
     public String lists(Model model) {
+        model.addAttribute("points", pointsService.findByPermit());
+        model.addAttribute("count", pointsService.countPermit());
         return "lists";
     }
 
-    @GetMapping("/detail")
-    public String details(Model model) {
-
+    @GetMapping("/detail/{point_no}")
+    public String details(Model model, @PathVariable Long point_no) {
+        model.addAttribute("point", pointsService.findOne(point_no));
+        model.addAttribute("pointJSON", new Gson().toJson(pointsService.findOne(point_no)));
         return "detail";
     }
 

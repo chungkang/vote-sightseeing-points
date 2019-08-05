@@ -29,10 +29,10 @@ public class Points extends BaseTimeEntity {
     @Column(columnDefinition = "TEXT", nullable = false)
     private String memo;        // 메모
 
-    private String author;      // 요청자
-
     @Column(length = 2, nullable = false)
     private String permit;      // 등록여부
+
+    private String author;      // 요청자
 
     @Builder
     public Points(Long point_no, String name, String location, String memo, String author, String permit) {
@@ -40,7 +40,7 @@ public class Points extends BaseTimeEntity {
         this.name = name;
         this.location = location;
         this.memo = memo;
-        this.author = author;
         this.permit = permit;
+        this.author = author;
     }
 }

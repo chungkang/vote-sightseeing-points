@@ -17,37 +17,26 @@
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
             integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
             crossorigin=""></script>
-
-    <style>
-        #mapid {
-            height: 400px;
-            margin: 0px;
-        }
-    </style>
 </head>
 <body>
     {{> common/navbar }}
     <div id="top" class="container" role="main" style="padding-top: 65px;">
         <h1>Add Point</h1>
-        <form method="POST" action="/addPoint" accept-charset="UTF-8" id="create_point_form" enctype="multipart/form-data">
-            <input name="latitude" type="hidden">
-            <input name="longitude" type="hidden">
-
+        <input name="latitude" type="hidden">
+        <input name="longitude" type="hidden">
+        <form method="POST" action="/add" accept-charset="UTF-8" id="create_point_form" enctype="multipart/form-data">
             <div class="form-group">
                 <h3><label for="name">Name</label></h3>
                 <input class="form-control" placeholder="Name of the Point" name="name" type="text" id="name">
             </div>
-
-            <div id="mapid" style="min-height: 400px; height: 580px; position: relative;"></div>
-
+            <div id="mapid" style="min-height: 400px; height: 400px; position: relative;"></div>
             <div class="form-group">
                 <h3><label for="description_revised">Memo of the point</label></h3>
-                <textarea class="form-control" placeholder="Please describe the point." name="memo" cols="50" rows="10" id="memo"></textarea>
+                <textarea class="form-control" placeholder="Please describe the point." name="memo" cols="50" rows="10" id="memo" style="resize: none"></textarea>
             </div>
             <hr class="divider">
             <div class="form-group">
-                <input class="btn btn-primary disabled" disabled="disabled" type="submit" value="Submit">
-                <a role="button" class="btn btn-link" data-toggle="modal" data-target="#termsModal" style="font-weight:300;white-space:normal"></a>
+                <button type="button" class="btn btn-primary" id="btn-add">등록요청</button>
             </div>
         </form>
         <hr>

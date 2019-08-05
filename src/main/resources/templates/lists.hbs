@@ -31,19 +31,19 @@
                         </div><!-- /input-group -->
                     </div>
                 </div>
-                <section id="spots-list">
+                <section id="points-list">
                     <div class="text-muted" style="padding-top:20px">
-                        1-10 of 7151 spots
+                        {{count}} points
                     </div>
                     <ul class="list-group">
+                        {{#each points}}
                         <li class="list-group-item">
                             <div class="media">
                                 <div class="media-left">
-                                    <a href="https://calisthenics-parks.com/spots/8860-en-outdoor-pull-up-bars-yongsan-gu-dongjak-bridge-calisthenics-park"><img src="https://calisthenics-parks.com/attachments/51HbXrYmzLLfwDrRS5dgUhnFb1fEaH93pAOQY5qf_100_square.jpg" style="max-width:80px" class="img-responsive media-object" alt="Outdoor Pull Up Bars - Yongsan-gu - Dongjak Bridge - Calisthenics park"></a>
+                                    <a href="/detail/{{point_no}}"><img src="" style="max-width:80px" class="img-responsive media-object""></a>
                                 </div>
                                 <div class="media-body">
-
-                                    <h4 class="media-heading"><a href="https://calisthenics-parks.com/spots/8860-en-outdoor-pull-up-bars-yongsan-gu-dongjak-bridge-calisthenics-park">Outdoor Pull Up Bars - Yongsan-gu - Dongjak Bridge - Calisthenics park</a></h4>
+                                    <h4 class="media-heading"><a href="/detail/{{point_no}}">{{name}}</a></h4>
                                     <ul class="list-inline shrinked" style="margin-bottom:5px">
                                         <li>
                                             <span class="text-nowrap ">
@@ -52,69 +52,15 @@
                                         </li>
                                         <li><span style="margin-left:10px"></span></li>
                                     </ul>
-                                    <ul class="list-inline localizationActions shrinked">
-                                        <li><a href="https://calisthenics-parks.com/countries/kr-en-south-korea" class="btn btn-default btn-xs"><span class="st-icon-earth" aria-hidden="true"></span> South Korea</a></li>
-                                        <li><a href="https://calisthenics-parks.com/regions/53-en-asia" class="btn btn-default btn-xs"><span class="st-icon-bagel" aria-hidden="true"></span> Asia</a></li>
-                                        <li><a href="https://calisthenics-parks.com/cities/5049-en-yongsan-gu-seoul-south-korea" class="btn btn-default btn-xs"><span class="st-icon-city" aria-hidden="true"></span> Yongsan-gu</a></li>
-                                    </ul>
                                 </div>
                                 <div class="media-right media-middle text-right spotActions">
-                                    <button type="button" class="btn btn-default expanded" data-toggle="modal" data-target="#loginOrRegister" title="Like">
-                                        <span class="st-icon-heart"></span>
-                                    </button>
-                                    <a class="btn btn-default expanded" href="https://calisthenics-parks.com/spots/8860-en-outdoor-pull-up-bars-yongsan-gu-dongjak-bridge-calisthenics-park#comments" title="Write a comment">
-                                        <span class="st-icon-chat-conversation-alt" aria-hidden="true"></span>
+                                    <a class="btn btn-default expanded" href="" title="Write a comment">
+                                        <span class="glyphicon-heart" aria-hidden="true"></span>
                                     </a>
                                 </div>
                             </div>
                         </li>
-                        <li class="list-group-item">
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="https://calisthenics-parks.com/spots/8870-en-workout-station-kitakyushu-outdoor-fitness-yahatahigashi-ku"><img src="https://calisthenics-parks.com/attachments/3pUVt79wLeeHp6fEbkVbIwUfztwnbwDuedbmYzqe_100_square.jpg" style="max-width:80px" class="img-responsive media-object" alt="Workout Station - Kitakyūshū - Outdoor Fitness Yahatahigashi-ku"></a>
-                                </div>
-                                <div class="media-body">
-
-                                    <h4 class="media-heading"><a href="https://calisthenics-parks.com/spots/8870-en-workout-station-kitakyushu-outdoor-fitness-yahatahigashi-ku">Workout Station - Kitakyūshū - Outdoor Fitness Yahatahigashi-ku</a></h4>
-                                    <ul class="list-inline shrinked" style="margin-bottom:5px">
-                                        <li><span class="text-nowrap ">
-                                                        <span class="st-icon-favorite" aria-hidden="true"></span>
-                                                </span></li>
-                                        <li><span style="margin-left:10px">
-                                                                                                                        </span></li>
-                                    </ul>
-                                    <ul class="list-inline localizationActions shrinked">
-                                        <li><a href="https://calisthenics-parks.com/countries/jp-en-japan" class="btn btn-default btn-xs"><span class="st-icon-earth" aria-hidden="true"></span> Japan</a></li>
-                                        <li><a href="https://calisthenics-parks.com/regions/53-en-asia" class="btn btn-default btn-xs"><span class="st-icon-bagel" aria-hidden="true"></span> Asia</a></li>
-                                        <li><a href="https://calisthenics-parks.com/cities/3989-en-kita" class="btn btn-default btn-xs"><span class="st-icon-city" aria-hidden="true"></span> Kitakyūshū</a></li>
-                                    </ul>
-                                </div>
-                                <div class="media-right media-middle text-right spotActions">
-                                    <button type="button" class="btn btn-default expanded" data-toggle="modal" data-target="#loginOrRegister" title="Like">
-                                        <span class="st-icon-heart"></span>
-                                    </button>
-
-                                    <a class="btn btn-default expanded" href="https://calisthenics-parks.com/spots/8870-en-workout-station-kitakyushu-outdoor-fitness-yahatahigashi-ku#comments" title="Write a comment">
-                                        <span class="st-icon-chat-conversation-alt" aria-hidden="true"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="pagination">
-                        <li class="disabled"><span>«</span></li>
-                        <li class="active"><span>1</span></li>
-                        <li><a href="https://calisthenics-parks.com/spots?filter=&amp;order=distance&amp;page=2#goto-tab-list">2</a></li>
-                        <li><a href="https://calisthenics-parks.com/spots?filter=&amp;order=distance&amp;page=3#goto-tab-list">3</a></li>
-                        <li><a href="https://calisthenics-parks.com/spots?filter=&amp;order=distance&amp;page=4#goto-tab-list">4</a></li>
-                        <li><a href="https://calisthenics-parks.com/spots?filter=&amp;order=distance&amp;page=5#goto-tab-list">5</a></li>
-                        <li><a href="https://calisthenics-parks.com/spots?filter=&amp;order=distance&amp;page=6#goto-tab-list">6</a></li>
-                        <li><a href="https://calisthenics-parks.com/spots?filter=&amp;order=distance&amp;page=7#goto-tab-list">7</a></li>
-                        <li><a href="https://calisthenics-parks.com/spots?filter=&amp;order=distance&amp;page=8#goto-tab-list">8</a></li>
-                        <li class="disabled"><span>...</span></li>
-                        <li><a href="https://calisthenics-parks.com/spots?filter=&amp;order=distance&amp;page=143#goto-tab-list">143</a></li>
-                        <li><a href="https://calisthenics-parks.com/spots?filter=&amp;order=distance&amp;page=144#goto-tab-list">144</a></li>
-                        <li><a href="https://calisthenics-parks.com/spots?filter=&amp;order=distance&amp;page=2#goto-tab-list" rel="next">»</a></li>
+                        {{/each}}
                     </ul>
                 </section>
                 <hr>

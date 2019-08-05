@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Vote Sightseeing Points</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--부트스트랩 css 추가-->
+    <link rel="stylesheet" href="/css/lib/bootstrap.min.css">
+
+    <!-- leaflet css 추가 -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin=""/>
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+            integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+            crossorigin=""></script>
+</head>
+<body>
+    {{> common/navbar }}
+
+    <input type="hidden" id="pointJSON" value='{{pointJSON}}'/>
+
+    <div id="top" class="container" role="main" style="padding-top: 65px;">
+        <div class="row">
+            <div class="col-md-12" id="content-l-container">
+                <h1 style="margin-top:0">{{point.name}}</h1>
+                <div id="mapid" style="min-height: 400px; height: 400px; position: relative;"></div>
+                <h3><label for="description_revised">Memo of the point</label></h3>
+                <textarea class="form-control" readonly="true" name="memo" cols="50" rows="10" id="memo" style="resize: none">{{point.memo}}</textarea>
+
+                <hr class="divider">
+                <footer class="footer">
+                    {{> common/footer }}
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!--부트스트랩 js, jquery 추가-->
+<script src="/js/lib/jquery.min.js"></script>
+<script src="/js/lib/bootstrap.min.js"></script>
+
+<!--custom js 추가-->
+<script src="/js/app/common/common.js"></script>
+<script src="/js/app/detail.js"></script>
+
+</html>
