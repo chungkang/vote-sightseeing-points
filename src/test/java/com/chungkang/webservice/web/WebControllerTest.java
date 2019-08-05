@@ -20,7 +20,7 @@ public class WebControllerTest {
     @Test
     public void 메인페이지_로딩() {
         //when
-        String body = this.restTemplate.getForObject("/", String.class);
+        String body = this.restTemplate.getForObject("/sample", String.class);
 
         //then
         assertThat(body).contains("Vote Sightseeing Points");

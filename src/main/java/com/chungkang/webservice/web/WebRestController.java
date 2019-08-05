@@ -1,5 +1,6 @@
 package com.chungkang.webservice.web;
 
+import com.chungkang.webservice.dto.points.PointsMainResponseDto;
 import com.chungkang.webservice.dto.points.PointsSaveRequestDto;
 import com.chungkang.webservice.dto.posts.PostsSaveRequestDto;
 import com.chungkang.webservice.service.PointsService;

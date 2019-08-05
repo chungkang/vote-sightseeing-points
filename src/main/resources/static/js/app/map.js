@@ -15,7 +15,7 @@ navigator.geolocation.getCurrentPosition(function(location) {
     // 지도 컨테이너 생성
     mymap = L.map('mapid', {
         center: [lat, lng],
-        zoom: 17
+        zoom: 12
     });
 
     // 지도 표시

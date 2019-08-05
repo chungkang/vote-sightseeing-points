@@ -12,7 +12,7 @@ let longitude = point.location.split(" ")[1]; //경도
 // 지도 컨테이너 생성
 const mymap = L.map('mapid', {
     center: [latitude, longitude],
-    zoom: 9
+    zoom: 17
 });
 
 // 지도 표시

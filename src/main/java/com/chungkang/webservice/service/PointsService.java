@@ -19,7 +19,8 @@ public class PointsService {
 
     @Transactional
     public Long save(PointsSaveRequestDto dto){
-        dto.setPermit("N");
+        //dto.setPermit("N");
+        dto.setPermit("Y");
         return pointsRepository.save(dto.toEntity()).getPoint_no();
     }
 

@@ -13,12 +13,11 @@
     <div id="top" class="container" role="main" style="padding-top: 65px;">
         <div class="row">
             <div class="col-md-12" id="content-l-container">
-                <table class="table table-horizontal table-bordered">
+                <table class="table table-hover table-bordered">
                     <thead class="thead-strong">
                     <tr>
                         <th>번호</th>
                         <th>명칭</th>
-                        <th>좌표</th>
                         <th>작성자</th>
                         <th>최종수정일</th>
                         <th colspan="2">등록여부</th>
@@ -28,12 +27,13 @@
                     {{#each points}}
                         <tr>
                             <td>{{point_no}}</td>
-                            <td>{{name}}</td>
-                            <td>{{location}}</td>
+                            <td><a href="/detail/{{point_no}}">{{name}}</a></td>
                             <td>{{author}}</td>
                             <td>{{modifiedDate}}</td>
                             <td>{{permit}}</td>
-                            <td><button class="btn btn-primary">{{point_no}}번 등록</button></td>
+                            <td>
+                                <button class="btn btn-primary btn-permit">등록</button>
+                            </td>
                         </tr>
                     {{/each}}
                     </tbody>

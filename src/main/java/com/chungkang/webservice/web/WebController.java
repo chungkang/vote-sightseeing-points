@@ -16,10 +16,16 @@ public class WebController {
     private PostsService postsService;
     private PointsService pointsService;
 
+    @GetMapping("/sample")
+    public String sample(Model model) {
+        model.addAttribute("posts", postsService.findAllDesc());
+        return "sample";
+    }
+
     @GetMapping("/")
     public String main(Model model) {
-        model.addAttribute("posts", postsService.findAllDesc());
-        return "main";
+        model.addAttribute("pointsJSON", new Gson().toJson(pointsService.findByPermit()));
+        return "map";
     }
 
     @GetMapping("/map")
