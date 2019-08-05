@@ -7,10 +7,17 @@ let lat; //위도
 let lng; //경도
 let mymap;
 
+// IP 얻기
+$(function() {$.getJSON("https://api.ipify.org?format=jsonp&callback=?", function(json) {
+    let locationUrl = 'http://ip-api.com/json/' + json.ip;
+    $.getJSON(locationUrl, function(location) {
+        lat = location.lat;
+        lng = location.lon;
+
 // 현재위치 구하기
-navigator.geolocation.getCurrentPosition(function(location) {
-    lat = location.coords.latitude;
-    lng = location.coords.longitude;
+//navigator.geolocation.getCurrentPosition(function(location) {
+//    lat = location.coords.latitude;
+//    lng = location.coords.longitude;
 
     // 지도 컨테이너 생성
     mymap = L.map('mapid', {
@@ -37,4 +44,9 @@ navigator.geolocation.getCurrentPosition(function(location) {
             );
         })();
     }
+});
+
+
+
+    });
 });
