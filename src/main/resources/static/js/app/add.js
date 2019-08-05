@@ -6,29 +6,39 @@ $("#navAdd").attr('class', 'active');
 let latitude; //위도
 let longitude; //경도
 let marker;
-
-// 현재위치 구하기
-navigator.geolocation.getCurrentPosition(function(location) {
-    latitude = location.coords.latitude;
-    longitude = location.coords.longitude;
-
-    // 지도 컨테이너 생성
-    const mymap = L.map('mapid', {
-        center: [latitude, longitude],
-        zoom: 17
-    });
-
-    // 지도 표시
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' //화면 오른쪽 하단 attributors
-    }).addTo(mymap);
-
-    marker = L.marker([latitude, longitude], {draggable : true}).addTo(mymap);
-});
-
 let authorIP;
+
 // IP 얻기
-$(function() {$.getJSON("https://api.ipify.org?format=jsonp&callback=?", function(json) { authorIP = json.ip; });});
+$(function() {
+    $.getJSON("https://api.ipify.org?format=jsonp&callback=?", function (json) {
+        authorIP = json.ip;
+        let locationUrl = 'http://ip-api.com/json/' + json.ip;
+        // IP로 현재위치 구하기
+        $.getJSON(locationUrl, function (location) {
+            latitude = location.lat;
+            latitude = location.lon;
+
+            // 현재위치 구하기
+            navigator.geolocation.getCurrentPosition(function (location) {
+                latitude = location.coords.latitude;
+                longitude = location.coords.longitude;
+
+                // 지도 컨테이너 생성
+                const mymap = L.map('mapid', {
+                    center: [latitude, longitude],
+                    zoom: 17
+                });
+
+                // 지도 표시
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' //화면 오른쪽 하단 attributors
+                }).addTo(mymap);
+
+                marker = L.marker([latitude, longitude], {draggable: true}).addTo(mymap);
+            });
+        });
+    })
+});
 
 // 등록요청
 const add = {
