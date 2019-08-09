@@ -36,6 +36,11 @@ public class WebRestController {
                 .orElse("");
     }
 
+    @GetMapping("/profiles")
+    public String[] getProfiles () {
+        return env.getActiveProfiles();
+    }
+
     @PostMapping("/add")
     public Long savePoints(@RequestBody PointsSaveRequestDto dto) { return pointsService.save(dto); }
 }
