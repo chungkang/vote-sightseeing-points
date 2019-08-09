@@ -1,10 +1,3 @@
 spring:
   profiles:
-    active: set1
-#운영환경
----
-spring.profiles: set1
-spring.profiles.include: real-db
-
-server:
-  port: 8081
+    active: real-db # 기본 환경 선택
