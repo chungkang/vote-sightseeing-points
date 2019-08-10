@@ -24,6 +24,8 @@
 6. [handlebars.java](https://github.com/jknack/handlebars.java)
 7. [The hidden power of Handlebars partials](https://cloudfour.com/thinks/the-hidden-power-of-handlebars-partials/)
 8. [[SPRING] Javascript에서 모델 속성에 액세스하는 방법](https://cnpnote.tistory.com/entry/SPRING-Javascript%EC%97%90%EC%84%9C-%EB%AA%A8%EB%8D%B8-%EC%86%8D%EC%84%B1%EC%97%90-%EC%95%A1%EC%84%B8%EC%8A%A4%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95)
+9. [Travis CI](https://travis-ci.org/)
+10. [IP-API](http://ip-api.com/)
 
 > 추가 필요
 
