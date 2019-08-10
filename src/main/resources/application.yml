@@ -6,17 +6,14 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
+# actuator 설정: datasource 확인을 위한 /env 설정 확인
 endpoints:
-  enabled: false
-  health:
+  env:
     enabled: true
-    sensitive: false
 management:
   security:
     enabled: false
-  health:
-    db:
-      enabled: true
+
 # 운영 환경
 ---
 spring.profiles: set1
