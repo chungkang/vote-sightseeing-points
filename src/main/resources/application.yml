@@ -1,3 +1,23 @@
 spring:
   profiles:
-    active: real-db # 기본 환경 선택
+    active: set1 # 기본 환경 선택
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+endpoints:
+  enabled: false
+  health:
+    enabled: true
+    sensitive: false
+management:
+  security:
+    enabled: false
+  health:
+    db:
+      enabled: true
+# 운영 환경
+---
+spring.profiles: set1
+spring.profiles.include: real-db
