@@ -4,7 +4,21 @@
  - http://www.vote-sightseeing-points.ml/
 
 ## 프로젝트 목적
- - 누구나 관광지와 같은 장소의 위치를 등록하여 공유할 수 있는 서비스를 구축
+ - 관광 포인트 공유 서비스
+ - 사용자들이 직접 등록한 관광지를 사용자들이 투표하여 관광지 순위를 볼 수 있는 서비스
+
+## 요구사항
+ - 새로운 포인트를 등록 요청할 수 있다.
+	- 포인트를 지도상에서 볼 수 있다.
+	- 포인트를 목록으로 볼 수 있다.
+	- 포인트의 상세 정보를 조회 할 수 있다.
+	- 포인트 정보를 수정 요청할 수 있다.(진행중)
+	- 포인트의 제목과 내용을 수정 요청할 수 있다.(진행중)
+	- 포인트를 삭제 요청할 수 있다. (진행중)
+	- 포인트에 사진을 첨부할 수 있다. (진행중)
+	- 포인트에 투표할 수 있다. (진행중)
+	- 포인트를 목록으로 조회 시 투표 순위, 제목, 등록순서 등의 조건으로 정렬할 수 있다. (진행중)
+ - 관리자는 포인트의 등록/수정/삭제 요청이 있을 때 등록 허가/수정 허가/삭제 허가를 할 수 있다. (진행중)
 
 ## 개발환경
  - IDE: IntelliJ IDEA Ultimate
@@ -14,6 +28,9 @@
  - BackEnd: JAVA
  - FrontEnd: Handleabrs, JavaScript
  - OpenSouce/Library: [Leaflet](https://leafletjs.com/), [OSM](https://www.openstreetmap.org/#map=18/37.58806/127.00717&layers=G), [BootStrap](https://getbootstrap.com/)
+
+## 수정 필요한 항목
+ - 화면 너비가 좁아졌을 때 상단 네비게이션바 메뉴 사라짐
 
 ## 참고
 1. [jojoldu님의 Repository: 스프링부트로 웹서비스 구축하기 시리즈](https://github.com/jojoldu/springboot-webservice)
@@ -26,6 +43,7 @@
 8. [[SPRING] Javascript에서 모델 속성에 액세스하는 방법](https://cnpnote.tistory.com/entry/SPRING-Javascript%EC%97%90%EC%84%9C-%EB%AA%A8%EB%8D%B8-%EC%86%8D%EC%84%B1%EC%97%90-%EC%95%A1%EC%84%B8%EC%8A%A4%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95)
 9. [Travis CI](https://travis-ci.org/)
 10. [IP-API](http://ip-api.com/)
+11. [Freenom](https://my.freenom.com/clientarea.php)
 
 > 추가 필요
 
