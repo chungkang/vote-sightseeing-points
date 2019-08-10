@@ -16,7 +16,7 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
 group = 'com.chungkang'
-version = '0.1.21'
+version = '0.1.22'
 sourceCompatibility = 1.8
 
 repositories {
