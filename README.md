@@ -30,7 +30,6 @@
  - Build Tool: Gradle
  - BackEnd: JAVA
  - FrontEnd: Handleabrs, JavaScript
- - OpenSouce/Library: [Leaflet](https://leafletjs.com/), [OSM](https://www.openstreetmap.org/#map=18/37.58806/127.00717&layers=G), [BootStrap](https://getbootstrap.com/)
 
 ## 수정 필요한 항목
  - 화면 너비가 좁아졌을 때 상단 네비게이션바 메뉴 사라짐
