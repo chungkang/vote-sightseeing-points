@@ -1,7 +1,7 @@
 # Vote Sightseeing Points [![Build Status](https://travis-ci.org/chungkang/vote-sightseeing-points.svg?branch=master)](https://travis-ci.org/chungkang/vote-sightseeing-points)
 
 ## 서비스 URL
- - http://www.vote-sightseeing-points.ml/
+ -
 
 ## 프로젝트 목적
  - 관광 포인트 공유 서비스
